@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Vista Price</title>
+</head>
+<body>
+	<h1>Información precios</h1>
+	<div th:if="${prices == null}">
+        <td>No hay precios.</td>
+    </div>
+	<table>
+		<tr th:each="price: ${prices}">
+			<td>Producto: <span th:text="${price.productId}"></span></td>
+			<td>Cadena: <span th:text="${price.brandId}"></span></td>
+			<td>Tarifa: <span th:text="${price.priceList}"></span></td>
+			<td>Fecha de inicio: <span th:text="${price.startDate}"></span></td>
+			<td>Fecha de fin: <span th:text="${price.endDate}"></span></td>
+			<td>Precio: <span th:text="${price.price}"></span> <span th:text="${price.currency}"></span></td>	
+		</tr>
+	</table>
+</body>
+</html>
